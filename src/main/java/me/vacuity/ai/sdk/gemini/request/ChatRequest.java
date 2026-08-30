@@ -21,6 +21,8 @@ import java.util.List;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ChatRequest {
 
     // default model: gemini-pro
@@ -98,5 +100,7 @@ public class ChatRequest {
         private Boolean includeThoughts;
 
         private Integer thinkingBudget;
+        
+        private String thinkingLevel;
     }
 }

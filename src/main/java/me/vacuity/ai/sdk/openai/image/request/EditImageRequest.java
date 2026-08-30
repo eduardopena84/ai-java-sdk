@@ -1,8 +1,10 @@
 package me.vacuity.ai.sdk.openai.image.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @description:
@@ -13,6 +15,8 @@ import lombok.Data;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class EditImageRequest {
 
     private String prompt;
@@ -32,4 +36,9 @@ public class EditImageRequest {
 
     @JsonProperty("input_fidelity")
     private String inputFidelity;
+
+    /**
+     * "low" 放宽过滤；"auto" 为默认。仅 gpt-image 系列生效。
+     */
+    private String moderation;
 }
